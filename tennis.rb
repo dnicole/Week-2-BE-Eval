@@ -1,7 +1,12 @@
 module Tennis
+
   class Game
     attr_accessor :player1, :player2
 
+    # Instaniates a new Game with two players.
+    # Sets players to be each others' opponents.
+    #
+    # Returns two new player objects.
     def initialize
       @player1 = Player.new
       @player2 = Player.new
@@ -9,6 +14,7 @@ module Tennis
       @player1.opponent = @player2
       @player2.opponent = @player1
     end
+
   end
 
   class Player
@@ -16,6 +22,11 @@ module Tennis
 
     def initialize
       @points = 0
+      @opponent = opponent
+    end
+
+    def opponent
+      @opponent
     end
 
     # Increments the score by 1.
