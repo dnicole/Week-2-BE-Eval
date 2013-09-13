@@ -6,7 +6,7 @@ module Tennis
     # Instaniates a new Game with two players.
     # Sets players to be each others' opponents.
     #
-    # Returns two new player objects.
+    # Returns a game and two new player objects.
     def initialize
       @player1 = Player.new
       @player2 = Player.new
@@ -32,6 +32,9 @@ module Tennis
   class Player
     attr_accessor :points, :opponent
 
+    # Starts player objects out with 0 points and an opponent.
+    # 
+    # Returns a player.
     def initialize
       @points = 0
       @opponent = opponent
@@ -51,6 +54,7 @@ module Tennis
     # Returns the String score for the player.
     def score
       return 'love' if @points == 0
+      return 'fifteen' if @points == 1 
     end
   end
 end
