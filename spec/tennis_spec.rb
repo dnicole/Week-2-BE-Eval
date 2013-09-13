@@ -93,4 +93,23 @@ describe Tennis::Player do
       end
     end
   end
+
+  describe "#deuce" do
+    context 'when both players have 3 points' do
+      it 'sets Deuce' do
+        player.points = 3
+        player.opponent.points = 3
+
+        expect(player.deuce).to eq(true)
+      end
+    end
+    context 'when both players have 4 points' do
+      it 'sets Deuce' do
+        player.points = 4
+        player.opponent.points = 4
+
+        expect(player.deuce).to eq(true)
+      end
+    end
+  end
 end
