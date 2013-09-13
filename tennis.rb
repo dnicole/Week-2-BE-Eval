@@ -61,8 +61,12 @@ module Tennis
       return 'forty' if @points == 3 
     end
 
-    def advantage
+    def advantage?
       @points > @opponent.points && @points > 3
+    end
+
+    def deuce?
+      @points >= 3 && @points == @opponent.points
     end
   end
 end
