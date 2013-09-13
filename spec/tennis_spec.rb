@@ -18,7 +18,7 @@ describe Tennis::Game do
     end
   end
 
-  describe '#wins_ball' do
+  describe '.wins_ball' do
     it 'increments the points of the winning player' do
       game.wins_ball(1)
 

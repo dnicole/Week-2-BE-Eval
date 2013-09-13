@@ -15,6 +15,18 @@ module Tennis
       @player2.opponent = @player1
     end
 
+    # Records a point for either player.
+    # Calls record_won_ball! for whichever player won point
+    #
+    # Adds to score for player.
+    def wins_ball(play)
+      if play == 1
+        @player1.record_won_ball!
+      else
+        @player2.record_won_ball!
+      end
+    end
+
   end
 
   class Player
