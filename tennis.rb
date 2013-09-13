@@ -40,6 +40,8 @@ module Tennis
       @opponent = opponent
     end
 
+    # Returns opponent.
+    # 
     def opponent
       @opponent
     end
@@ -57,6 +59,10 @@ module Tennis
       return 'fifteen' if @points == 1
       return 'thirty' if @points == 2
       return 'forty' if @points == 3 
+    end
+
+    def advantage
+      @points > @opponent.points && @points > 3
     end
   end
 end
