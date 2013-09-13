@@ -82,4 +82,16 @@ describe Tennis::Player do
       end
     end
   end
+
+  describe '#advantage' do 
+    context 'when player is up by 1 point' do
+      it 'sets Advantage to that player' do
+        player.score > player.opponent.score
+        player.score < player.opponent.score
+
+        expect(player.advantage).to eq(true)
+        expect(player.advantage).to eq(false)
+      end
+    end
+  end
 end
