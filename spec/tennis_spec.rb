@@ -94,7 +94,7 @@ describe Tennis::Player do
     end
   end
 
-  describe "#deuce" do
+  describe '#deuce' do
     context 'when both players have 3 points' do
       it 'sets Deuce' do
         player.points = 3
@@ -109,6 +109,24 @@ describe Tennis::Player do
         player.opponent.points = 4
 
         expect(player.deuce?).to eq(true)
+      end
+    end
+  end
+
+  describe '#win' do
+    context 'when #deuce?' do
+      it 'player with advantage wins on next point' do
+        player.points = 5 && player.advantage?
+        
+        expect(player.win?).to eq(true)
+      end
+    end
+    context 'when player reaches 4 pts and opponent has 2' do
+      it 'declares that player the winner' do
+        player.points = 4
+        player.opponent.points = 2 
+
+        expect(player.win?).to eq(true)
       end
     end
   end

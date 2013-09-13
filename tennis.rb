@@ -61,10 +61,14 @@ module Tennis
       return 'forty' if @points == 3 
     end
 
+    # Sets advantage when player has 3 pts and is up by 1 pt. 
+    #
     def advantage?
       @points > @opponent.points && @points > 3
     end
 
+    # Sets deuce when score is tied at 3 or 4 pts. 
+    #
     def deuce?
       @points >= 3 && @points == @opponent.points
     end
