@@ -72,5 +72,17 @@ module Tennis
     def deuce?
       @points >= 3 && @points == @opponent.points
     end
+
+    def win?
+      case 
+      when deuce? 
+        if record_won_ball! && advantage?
+          return true
+        else
+        end
+      when @points = 4 && @opponent.points = 2 
+        return true
+      end
+    end
   end
 end

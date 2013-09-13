@@ -116,7 +116,7 @@ describe Tennis::Player do
   describe '#win' do
     context 'when #deuce?' do
       it 'player with advantage wins on next point' do
-        player.points = 5 && player.advantage?
+        player.record_won_ball! && player.advantage?
         
         expect(player.win?).to eq(true)
       end
